@@ -10,11 +10,9 @@ class Exercise(SqlAlchemyBase):
 
     title = sqlalchemy.Column(sqlalchemy.String)
 
-    age_up = sqlalchemy.Column(sqlalchemy.Integer)
-    weight_up = sqlalchemy.Column(sqlalchemy.Integer)
-    sex = sqlalchemy.Column(sqlalchemy.String)
-    height_up = sqlalchemy.Column(sqlalchemy.Integer)
+    body_part = sqlalchemy.Column(sqlalchemy.String)
+    equipment = sqlalchemy.Column(sqlalchemy.String)
+    difficulty = sqlalchemy.Column(sqlalchemy.Integer)
 
-    age_down = sqlalchemy.Column(sqlalchemy.Integer)
-    weight_down = sqlalchemy.Column(sqlalchemy.Integer)
-    height_down = sqlalchemy.Column(sqlalchemy.Integer)
+    img = sqlalchemy.Column(sqlalchemy.String)
+    plot = sqlalchemy.Column(sqlalchemy.String)

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    @media (min-width: 992px) {
+        .nav-ab-test--expand.size-w-100 .nav-pane__sub-menu {
+            width: 33%;
+        }
+
+        #certification-pane.certNavWithPromo .nav-pane__menu-group {
+            width: 75%;
+        }
+
+        #certification-pane.certNavWithPromo .nav-pane__nested-group--certs {
+            width: 66%;
+        }
+
+        #certification-pane.certNavWithPromo .nav-pane__nested-menu--certs {
+            width: 34%;
+        }
+    }
+
+
+
+
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (cookieFactory.getCookie("specialistNavLinks")) {
+            specialistNavLinks();
+        }
+        if (cookieFactory.getCookie("certNavWithPromo")) {
+            certNavWithPromo();
+        }
+    });
+
+    function specialistNavLinks() {
+        var elsToHide = document.querySelectorAll(".nav-ab-test--hide");
+
+        if (!cookieFactory.getCookie("specialistNavLinks")) {
+            cookieFactory.setCookie("specialistNavLinks", "true");
+        }
+
+        [].forEach.call(elsToHide, function (el) {
+            el.classList.add("hidden");
+        });
+
+        document.querySelector(".nav-ab-test--show").classList.remove("hidden");
+        document.querySelector(".nav-ab-test--expand").classList.add("size-w-100");
+    }
+
+    function certNavWithPromo() {
+        var certPane = document.getElementById("certification-pane");
+        var certPanePromo = certPane.querySelector(".nav-pane__promos");
+
+        var supportLinks = document.getElementById("nav-cert-support");
+        var supportLinksTitle = supportLinks.querySelector(".nav-pane__menu-title");
+        var supportLinksList = supportLinks.querySelector(".nav-pane__menu-list");
+
+        if (!cookieFactory.getCookie("certNavWithPromo")) {
+            cookieFactory.setCookie("certNavWithPromo", "true");
+        }
+
+        certPane.classList.add("certNavWithPromo");
+        supportLinks.classList.add("hidden");
+        certPanePromo.classList.remove("hidden");
+
+        supportLinks.previousElementSibling.appendChild(supportLinksTitle);
+        supportLinks.previousElementSibling.appendChild(supportLinksList);
+    }
+
+
+
+
+
+</script>
+
+
+<div class="content">
+    <header class="exercise-hero">
+        <div class="exercise-hero__inner">
+            <div class="exercise-hero__image-wrap">
+                <div class="exercise-hero__image"
+                     style="background-image: url('https://acewebcontent.azureedge.net/exercise-library/large/13-1.jpg');"></div>
+            </div>
+            <div class="exercise-hero__content-wrap">
+                <h2 class="exercise-hero__category-title">Arm Exercises</h2>
+                <h1 class="exercise-hero__title">Bent Knee Push-up</h1>
+                <div class="exercise-hero__data">
+                    <dl class="exercise-info exercise-info--hero">
+                        <div class="exercise-info__term exercise-info__term--body-part">
+                            <dt><span>Target </span>Body Part:</dt>
+                            <dd>Arms, Chest, Shoulders</dd>
+                        </div>
+                        <div class="exercise-info__term exercise-info__term--equipment">
+                            <dt>Equipment:</dt>
+                            <dd>No Equipment</dd>
+                        </div>
+                        <div class="exercise-info__term exercise-info__term--difficulty">
+                            <dt>Difficulty:</dt>
+                            <dd class="exercise-info__meter-wrap">
+                                <div class="exercise-info__meter">
+                                    <img class="exercise-info__bar-img"
+                                         src="https://acewebstatic.azureedge.net/v-637171850960000000/images/layout/2017/dist/exercise-meter.png"/>
+                                    <span class="exercise-info__lvl-label exercise-info__lvl-label--lvl1"><span
+                                            class="icon-wrap"><svg aria-hidden="true"
+                                                                   class="icon icon--caret-up icon--white"><use
+                                            xlink:href="#icon-caret-up"></use></svg></span>Beginner</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content__wrap">
+        <div class="content__row">
+            <main class="content__primary-two-column" role="main">
+
+
+                <div class="page-tools">
+                    <div class="page-tools__wrap">
+                        <div class="ace-btn-double-wrap">
+                            <a class="ace-btn-double overlay-reveal" data-src="#filter-overlay">View All Exercises <span
+                                    class="icon-wrap"><svg aria-hidden="true"
+                                                           class="icon icon--angle-right-bold icon--white"><use
+                                    xlink:href="#icon-angle-right-bold"></use></svg></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-post">
+                    <section class="exercise-post__step">
+                        <div class="exercise-post__step-image-wrap">
+                            <div id="imageFlicker"></div>
+                        </div>
+                        <div class="exercise-post__step-content">
+
+                            <h2>Step 1</h2>
+                            <p>Starting Position: Kneel on an exercise mat or floor and bring your feet together behind
+                                you.</p>
+                            <p>&nbsp;</p>
+                            <h2>Step 2</h2>
+                            <p>Slowly bend forward to place your palms flat on the mat, positioning your hands
+                                shoulder-width apart with your fingers facing forward. Slowly shift your weight forward
+                                until your shoulders are positioned directly over your hands. Reposition your hands as
+                                needed to allow full extension of your body from the knees without any bend at the hips.
+                                Stiffen your torso by contracting your core and abdominal muscles ("bracing").</p>
+                            <p>&nbsp;</p>
+                            <h2>Step 3</h2>
+                            <p>Downward Phase: Slowly lower your body towards the floor while maintaining a rigid torso
+                                and head aligned with your spine. Do not allow your low back to sag or your hips to hike
+                                upwards during this downward phase. Continue to lower yourself until your chest or chin
+                                touch the mat or floor. Your elbows should remain close to the sides of your body or
+                                flare outwards slightly.</p>
+                            <p>&nbsp;</p>
+                            <h2>Step 4</h2>
+                            <p>Upward Phase: Press upwards through your arms while maintaining a rigid torso and head
+                                aligned with your spine. Do not allow your low back to sag or your hips to hike upwards.
+                                Continue pressing until the arms are fully extended at the elbows.</p>
+                            <div id="exercise_tip">Push-ups place stress upon the wrist joints. To alleviate some of
+                                this stress you may opt to use dumbbells and grip the handles rather than place your
+                                hands on the floor. If your are pressing from an elevation such as a dumbbell, you do
+                                not need to lower your chest or chin to the floor, but rather lower yourself until your
+                                chest or chin are level with the dumbbell handles.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+{% endblock %}
