@@ -408,53 +408,6 @@ function getWhiteListedIDs(){
 
 </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (cookieFactory.getCookie("specialistNavLinks")) {
-            specialistNavLinks();
-        }
-        if (cookieFactory.getCookie("certNavWithPromo")) {
-            certNavWithPromo();
-        }
-    });
-
-    function specialistNavLinks() {
-        var elsToHide = document.querySelectorAll(".nav-ab-test--hide");
-
-        if (!cookieFactory.getCookie("specialistNavLinks")) {
-            cookieFactory.setCookie("specialistNavLinks", "true");
-        }
-
-        [].forEach.call(elsToHide, function (el) {
-            el.classList.add("hidden");
-        });
-
-        document.querySelector(".nav-ab-test--show").classList.remove("hidden");
-        document.querySelector(".nav-ab-test--expand").classList.add("size-w-100");
-    }
-
-    function certNavWithPromo() {
-        var certPane = document.getElementById("certification-pane");
-        var certPanePromo = certPane.querySelector(".nav-pane__promos");
-
-        var supportLinks = document.getElementById("nav-cert-support");
-        var supportLinksTitle = supportLinks.querySelector(".nav-pane__menu-title");
-        var supportLinksList = supportLinks.querySelector(".nav-pane__menu-list");
-
-        if (!cookieFactory.getCookie("certNavWithPromo")) {
-            cookieFactory.setCookie("certNavWithPromo", "true");
-        }
-
-        certPane.classList.add("certNavWithPromo");
-        supportLinks.classList.add("hidden");
-        certPanePromo.classList.remove("hidden");
-
-        supportLinks.previousElementSibling.appendChild(supportLinksTitle);
-        supportLinks.previousElementSibling.appendChild(supportLinksList);
-    }
-
-</script>
-
 {% block content %}{% endblock %}
 
 <section class="sub-section sub-section--related">
