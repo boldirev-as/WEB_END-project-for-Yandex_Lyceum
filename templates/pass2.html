@@ -68,7 +68,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 {'GTM-M73MM62':true});
 
 
-
     </script>
 
     <script>
@@ -81,7 +80,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         b = document; c = 'script'; d = b.createElement(c); d.src = a; d.type = 'text/java' + c; d.async = true;
         a = b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d, a);
     })();
-
 
 
 
@@ -103,7 +101,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
 </script>
 
 <script type="text/javascript">
@@ -113,7 +110,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
                         window.tealium_loaded = true;
                     });
-
 
 
 
@@ -134,7 +130,6 @@ function getWhiteListedIDs(){
   ];
   return whiteListedIDs;
 }
-
 
 
 
@@ -159,7 +154,6 @@ function getWhiteListedIDs(){
            min-height: 0;
        }
    }
-
 
 
 
@@ -386,238 +380,3 @@ function getWhiteListedIDs(){
         </div>
     </div><!-- end .main-head__wrap -->
 </header><!-- end .main-head -->
-
-<style>
-    @media (min-width: 992px) {
-        .nav-ab-test--expand.size-w-100 .nav-pane__sub-menu {
-            width: 33%;
-        }
-
-        #certification-pane.certNavWithPromo .nav-pane__menu-group {
-            width: 75%;
-        }
-
-        #certification-pane.certNavWithPromo .nav-pane__nested-group--certs {
-            width: 66%;
-        }
-
-        #certification-pane.certNavWithPromo .nav-pane__nested-menu--certs {
-            width: 34%;
-        }
-    }
-
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (cookieFactory.getCookie("specialistNavLinks")) {
-            specialistNavLinks();
-        }
-        if (cookieFactory.getCookie("certNavWithPromo")) {
-            certNavWithPromo();
-        }
-    });
-
-    function specialistNavLinks() {
-        var elsToHide = document.querySelectorAll(".nav-ab-test--hide");
-
-        if (!cookieFactory.getCookie("specialistNavLinks")) {
-            cookieFactory.setCookie("specialistNavLinks", "true");
-        }
-
-        [].forEach.call(elsToHide, function (el) {
-            el.classList.add("hidden");
-        });
-
-        document.querySelector(".nav-ab-test--show").classList.remove("hidden");
-        document.querySelector(".nav-ab-test--expand").classList.add("size-w-100");
-    }
-
-    function certNavWithPromo() {
-        var certPane = document.getElementById("certification-pane");
-        var certPanePromo = certPane.querySelector(".nav-pane__promos");
-
-        var supportLinks = document.getElementById("nav-cert-support");
-        var supportLinksTitle = supportLinks.querySelector(".nav-pane__menu-title");
-        var supportLinksList = supportLinks.querySelector(".nav-pane__menu-list");
-
-        if (!cookieFactory.getCookie("certNavWithPromo")) {
-            cookieFactory.setCookie("certNavWithPromo", "true");
-        }
-
-        certPane.classList.add("certNavWithPromo");
-        supportLinks.classList.add("hidden");
-        certPanePromo.classList.remove("hidden");
-
-        supportLinks.previousElementSibling.appendChild(supportLinksTitle);
-        supportLinks.previousElementSibling.appendChild(supportLinksList);
-    }
-
-</script>
-
-{% block content %}{% endblock %}
-
-<section class="sub-section sub-section--related">
-    <div class="sub-section__wrap">
-        <header class="sub-section__header">
-            <h2 class="sub-section__label sub-section__label--blue"><span class="sub-section__label-inner">Интересные статьи</span>
-            </h2>
-
-
-        </header>
-        <div class="sub-section__row ">
-            <div class="sub-section__post sub-section__post--1-3">
-                <a href="/education-and-resources/lifestyle/blog/5107/top-10-benefits-of-stretching/"
-                   class="post-related">
-                    <div class="post-related__img-wrap">
-                        <div class="post-related__img"
-                             style="background-image:url('https://acewebcontent.azureedge.net/blogs/blog-fitlife-100714-2.jpg');"></div>
-                    </div>
-                    <header class="post-related__head">
-                        <ul class="post-related__taxonomy">
-                            <li>Фитнесс</li>
-                        </ul>
-                        <h2 class="post-related__title">Топ 10 увлечений спортом</h2>
-                    </header>
-                </a>
-
-            </div>
-            <div class="sub-section__post sub-section__post--1-3">
-                <a href="/education-and-resources/lifestyle/blog/5353/weight-lifting-for-weight-loss/"
-                   class="post-related">
-                    <div class="post-related__img-wrap">
-                        <div class="post-related__img"
-                             style="background-image:url('https://acewebcontent.azureedge.net/blogs/opengraphimages/blog-fitlife-032715-11.jpg');"></div>
-                    </div>
-                    <header class="post-related__head">
-                        <ul class="post-related__taxonomy">
-                            <li>Интересные факты</li>
-                        </ul>
-                        <h2 class="post-related__title">Как эффективно снизить вес?</h2>
-                    </header>
-                </a>
-
-            </div>
-            <div class="sub-section__post sub-section__post--1-3">
-                <a href="/education-and-resources/lifestyle/blog/6313/7-core-stability-exercises/"
-                   class="post-related">
-                    <div class="post-related__img-wrap">
-                        <div class="post-related__img"
-                             style="background-image:url('https://acewebcontent.azureedge.net/fit-life/2017/03/2017-02-28-improve-core-strength-header.png');"></div>
-                    </div>
-                    <header class="post-related__head">
-                        <ul class="post-related__taxonomy">
-                            <li>Фитнесс</li>
-                        </ul>
-                        <h2 class="post-related__title">7 упражнений на каждый день</h2>
-                    </header>
-                </a>
-
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-
-<script src="https://acewebstatic.azureedge.net/v-637479527200000000/assets/dist/js/plugins.js"></script>
-<script src="https://acewebstatic.azureedge.net/v-637546088240000000/assets/dist/js/scripts.js"></script>
-<script src="https://acewebstatic.azureedge.net/v-637249660360000000/includes/scripts/ace.buttons.js"></script>
-
-<script type='text/javascript'
-        src='https://acewebstatic.azureedge.net/v-637171851020000000/includes/scripts/googlecse.js'></script>
-<script type='text/javascript'
-        src='https://acewebstatic.azureedge.net/v-637249660680000000/Scripts/dist/Shared/ACE.Chat.min.js'></script>
-<script type='text/javascript'
-        src='https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js'></script>
-<script type='text/javascript'
-        src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js'></script>
-<script type='text/javascript'
-        src='https://acewebstatic.azureedge.net/v-637296726760000000/app/build/client.bundle.js'></script>
-<script>
-			$(function(){
-                $('.banner-slider').slick({
-                    arrows: false,
-                    autoplay: true,
-                    autoplaySpeed: 3000,
-                    dots: true,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                });
-			});
-
-</script>
-
-<script type="text/javascript">
-			$(function () {
-				var rawEvt = {"event_action":"social_share","event_category":"addthis","event_name":"social_share","event_label":"https://www.acefitness.org/education-and-resources/lifestyle/exercise-library/"};
-				$('#socialshare_23772b74-705c-42b9-b556-f2bdbc680f73').on('click', '[data-social_network]',function(e){
-					var $element = $(this);
-					var evt = $.extend(rawEvt, { "event_action": $element.data('social_network')});
-					utag.link(evt);
-				});
-			});
-
-</script>
-
-<script type="text/javascript">
-            window.addEventListener('load', function() {
-                //replace default search text
-                var searchboxes = document.querySelectorAll(".widget .gsc-search-box.gsc-search-box-tools input.gsc-input");
-                var tempEl = document.createElement("div");
-                tempEl.innerHTML = 'Search ACE Fit&#174; Exercise Library';
-
-                for (i = 0; i < searchboxes.length; i++)
-                {
-                    searchboxes[i].placeholder = tempEl.innerHTML;
-                }
-
-            });
-
-</script>
-
-<script type="text/javascript">
-            var widgetOpts = {
-                returnCount: 4,
-                title: 'FIND AN ACE PROFESIONAL'
-            };
-            ReactDOM.render(React.createElement(Components.FindAnAcePro, widgetOpts), document.getElementById('findAnAcePro'));
-
-</script>
-
-<script type="text/javascript">
-            window.addEventListener('load', function() {
-                //replace default search text
-                var searchboxes = document.querySelectorAll(".widget .gsc-search-box.gsc-search-box-tools input.gsc-input");
-                var tempEl = document.createElement("div");
-                tempEl.innerHTML = 'Search ACE Fit&#174; Exercise Library';
-
-                for (i = 0; i < searchboxes.length; i++)
-                {
-                    searchboxes[i].placeholder = tempEl.innerHTML;
-                }
-
-            });
-
-</script>
-
-<script type="text/javascript" src="https://browser.sentry-cdn.com/6.2.4/bundle.min.js"
-        crossorigin="anonymous"></script>
-<script type="text/javascript">
-            ACE.ErrorLogger.RegisterSentry({"dsn":"https://48b2575fa7cf46c28db24511e4dfe920@sentry.io/1437802","environment":"Prod","release":"2021.4.21.3"})
-
-</script>
-
-<script type="text/javascript">
-            $(document).ready(function () {
-                displayQuickNav();
-                $('#Ads-Sitewide-TopBar-Container').show();
-            });
-
-</script>
-
-</body>
-</html>

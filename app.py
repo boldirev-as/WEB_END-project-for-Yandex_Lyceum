@@ -1,7 +1,7 @@
 import flask
 import flask_login
 from flask import render_template, make_response, jsonify
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user, login_required, logout_user
 from flask_restful import Api
 from werkzeug.utils import redirect
 
@@ -24,7 +24,7 @@ login_manager.init_app(app)
 
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({'error': error}), 404)
+    return make_response(jsonify({'error': "error"}), 404)
 
 
 @login_manager.user_loader
@@ -37,7 +37,8 @@ def load_user(user_id):
 def main_page():
     db_sess = db_session.create_session()
     exercises = db_sess.query(Exercise).all()
-    return render_template("templates.html", exercises=exercises)
+    return render_template("templates.html", exercises=exercises,
+                           difficulty={1: "Начинающий", 2: "Практикующий", 3: "Гуру"})
 
 
 @app.route("/myace/login/", methods=['GET', 'POST'])
@@ -53,6 +54,13 @@ def login():
                                message="Неправильный логин или пароль",
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -76,6 +84,11 @@ def reqister():
         db_sess.commit()
         return redirect('/')
     return render_template('register.html', title='Регистрация', form=form)
+
+
+@app.route("/education-and-resources/lifestyle/exercise-library/227/childs-pose/")
+def test():
+    return render_template("1.html")
 
 
 if __name__ == '__main__':
