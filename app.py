@@ -1,3 +1,5 @@
+import os
+
 import flask
 import flask_login
 from flask import render_template, make_response, jsonify
@@ -99,4 +101,5 @@ if __name__ == '__main__':
     api.add_resource(exersices_resources.ExercisesListResource, '/api/exercises')
     api.add_resource(exersices_resources.ExercisesResource, '/api/exercises/<int:exercises_id>')
 
-    app.run(host=HOST, port=PORT)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
