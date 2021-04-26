@@ -102,4 +102,4 @@ if __name__ == '__main__':
     api.add_resource(exersices_resources.ExercisesResource, '/api/exercises/<int:exercises_id>')
 
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='localhost', port=port)
+    app.run(host='0.0.0.0', port=port)
